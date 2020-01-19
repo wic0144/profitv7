@@ -1,4 +1,4 @@
-
+//package NewProfit;
 public class salary {
 		
 	public double salary;
