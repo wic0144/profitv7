@@ -1,5 +1,6 @@
-//package NewProfit;
+
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class profitDemo {
