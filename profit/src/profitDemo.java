@@ -5,18 +5,19 @@ import java.util.Scanner;
 public class profitDemo {
 
 	public static void main(String[] args) {
-		int index=-1; 
-		boolean ep=false; 
+		int index=-1;
+		boolean ep=false;
 		double com;
-		
+		double de=5000;
+
 		ArrayList<employees> em =new ArrayList<employees>();
 		ArrayList<salary> s =new ArrayList<salary>();
-	
-		
+
+
 		Scanner input =new Scanner (System.in);
 		char ch;
 		do {
-			
+
 			System.out.print("Enter EmployeesID : ");
 			String id=input.next();
 			System.out.print("Enter Employees Name : ");
@@ -27,15 +28,15 @@ public class profitDemo {
 			s.add(new salary(money));
 			System.out.println("Do you want enter again [y/n]");
 			ch = input.next().charAt(0);
-			}while(ch=='y');
-				for(int i=0;i<em.size();i++) {
-					em.get(i).setSalary(s.get(i));
+		}while(ch=='y');
+		for(int i=0;i<em.size();i++) {
+			em.get(i).setSalary(s.get(i));
 		}
-		
-			System.out.println("==================================================");
-	
+
+		System.out.println("==================================================");
+
 		do {
-			
+
 			System.out.print("Enter EmployeeID : ");
 			String num =input.next();
 			System.out.print("Enter Sale amount : ");
@@ -49,22 +50,28 @@ public class profitDemo {
 					ep=false;
 			}
 			if(ep) {
-				if(sale>100001)
+				if(sale>=00001)
 					com=0.03*sale;
-				else if(sale>50001)
+				else if(sale>=50001)
 					com=0.02*sale;
 				else
 					com=0.01*sale;
 				s.get(index).setCommission(com);
-					
+				s.get(index).setSale((int) sale);
+
 			}else {
 				System.out.println("!! Not have Employees number !!");
 			}
 			System.out.print("Do you want enter again [y/n]");
 			ch = input.next().charAt(0);
+
 		}	while(ch=='y');
-			for (int i = 0; i <em.size() ; i++) {
-				System.out.println(em.get(i).toString());
+		for (int i = 0; i <em.size() ; i++) {
+			if (em.get(i).getSalary().getSarary()<15000){
+				if (em.get(i).getSalary().getSale()>100001)
+					em.get(i).getSalary().setSarary(s.get(i).getSarary()+3000);
+			}
+			System.out.println("Salary of "+em.get(i).toString());
 
 
 		}

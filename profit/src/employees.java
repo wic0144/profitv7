@@ -1,18 +1,17 @@
-//package NewProfit;
 public class employees {
 
-	
+
 	public String name;
 	public String id;
 	private salary sl;
-	
+
 	public void setSalary(salary s) {
 		this.sl=s;
 	}
 	public salary getSalary() {
 		return sl;
 	}
-	
+
 	public employees(String name, String id) {
 		this.name = name;
 		this.id = id;
@@ -34,12 +33,13 @@ public class employees {
 	}
 
 
+
 	public void setId(String id) {
 		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Name %s Salary+commission+bonus %.2f",this.name,sl.salary+sl.commission);
+		return String.format("Name %s Salary+commission+bonus %.2f",this.name,sl.getSarary());
 	}
 }
